@@ -191,6 +191,9 @@ public class Fluids {
 	public static FluidType ALUMINA;
 	public static FluidType CONCRETE;
 	public static FluidType DHC;
+	public static FluidType CURIUM_SALT;
+	public static FluidType CURIUM_SALT_HOT;
+	public static FluidType CURIUM_SALT_DEPLETED;
 
 	/* Lagacy names for compatibility purposes */
 	@Deprecated public static FluidType ACID;	//JAOPCA uses this, apparently
@@ -408,8 +411,10 @@ public class Fluids {
 		ALUMINA =				new FluidType("ALUMINA",			0xDDFFFF, 0, 0, 0, EnumSymbol.NONE).addTraits(LIQUID);
 		AIR =					new FluidType("AIR",				0xE7EAEB, 0, 0, 0, EnumSymbol.NONE).addTraits(GASEOUS);
 		CONCRETE =				new FluidType("CONCRETE",			0xA2A2A2, 0, 0, 0, EnumSymbol.NONE).addTraits(LIQUID);
-		DHC =					new FluidType(153, "DHC",			0xD2AFFF, 0, 0, 0, EnumSymbol.NONE).addTraits(GASEOUS);
-
+		DHC =					new FluidType("DHC",			    0xD2AFFF, 0, 0, 0, EnumSymbol.NONE).addTraits(GASEOUS);
+        CURIUM_SALT=		    new FluidType("CURIUM_SALT",	    0xE8DFE1, 2, 0, 4, EnumSymbol.RADIATION).setTemp(700).addTraits(LIQUID, VISCOUS, new FT_Corrosive(65));
+		CURIUM_SALT_HOT =		new FluidType("CURIUM_SALT_HOT",	0x684850, 2, 0, 4, EnumSymbol.RADIATION).setTemp(1700).addTraits(LIQUID, VISCOUS, new FT_Corrosive(65));
+		CURIUM_SALT_DEPLETED =  new FluidType(156,"CURIUM_SALT_DEPLETED",	0x44363A, 2, 0, 4, EnumSymbol.RADIATION).setTemp(1700).addTraits(LIQUID, VISCOUS, new FT_Corrosive(65));
 		// ^ ^ ^ ^ ^ ^ ^ ^
 		//ADD NEW FLUIDS HERE
 
@@ -456,6 +461,9 @@ public class Fluids {
 		metaOrder.add(THORIUM_SALT);
 		metaOrder.add(THORIUM_SALT_HOT);
 		metaOrder.add(THORIUM_SALT_DEPLETED);
+		metaOrder.add(CURIUM_SALT);
+		metaOrder.add(CURIUM_SALT_HOT);
+		metaOrder.add(CURIUM_SALT_DEPLETED);
 		//pure elements, cyogenic gasses
 		metaOrder.add(HYDROGEN);
 		metaOrder.add(DEUTERIUM);
@@ -668,6 +676,9 @@ public class Fluids {
 
 		THORIUM_SALT.addTraits(new FT_Heatable().setEff(HeatingType.PWR, 1.0D).addStep(400, 1, THORIUM_SALT_HOT, 1), new FT_PWRModerator(2.5D));
 		THORIUM_SALT_HOT.addTraits(new FT_Coolable(THORIUM_SALT_DEPLETED, 1, 1, 400).setEff(CoolingType.HEATEXCHANGER, 1.0D));
+		
+		CURIUM_SALT.addTraits(new FT_Heatable().setEff(HeatingType.PWR, 1.0D).addStep(400, 1, CURIUM_SALT_HOT, 1), new FT_PWRModerator(3.3D));
+		CURIUM_SALT_HOT.addTraits(new FT_Coolable(CURIUM_SALT_DEPLETED, 1, 1, 400).setEff(CoolingType.HEATEXCHANGER, 1.0D));
 
 		if(idMapping.size() != metaOrder.size()) {
 			throw new IllegalStateException("A severe error has occoured during NTM's fluid registering process! The MetaOrder and Mappings are inconsistent! Mapping size: " + idMapping.size()+ " / MetaOrder size: " + metaOrder.size());
