@@ -94,9 +94,9 @@ public class Mats {
 	public static final NTMMaterial MAT_CM245		= makeSmeltable(9645,		CM245,		0x927178, 0x633C43, 0XEAD7DC).setAutogen(NUGGET, BILLET, INGOT).m();
 	public static final NTMMaterial MAT_CM246		= makeSmeltable(9646,		CM246,		0x927178, 0x633C43, 0XEAD7DC).setAutogen(NUGGET, BILLET, INGOT).m();
 	public static final NTMMaterial MAT_CM247		= makeSmeltable(9647,		CM247,		0x927178, 0x633C43, 0XEAD7DC).setAutogen(NUGGET, BILLET, INGOT).m();
-	public static final NTMMaterial MAT_BK247		= makeSmeltable(9747,		BK247,		0xACAEAE, 0x7B7C7C, 0xFFFFF).setAutogen(NUGGET, BILLET, DUST, INGOT).m();
-	public static final NTMMaterial MAT_BK248		= makeSmeltable(9748,		BK248,		0xACAEAE, 0x7B7C7C, 0xFFFFF).setAutogen(NUGGET, BILLET, DUST, INGOT).m();
-	public static final NTMMaterial MAT_BK249		= makeSmeltable(9749,		BK249,		0xACAEAE, 0x7B7C7C, 0xFFFFF).setAutogen(NUGGET, BILLET, DUST, INGOT).m();
+	public static final NTMMaterial MAT_BK247		= makeSmeltable(9747,		BK247,		0xACAEAE, 0x7B7C7C, 0xFFFFFF).setAutogen(NUGGET, BILLET, DUST, INGOT).m();
+	public static final NTMMaterial MAT_BK248		= makeSmeltable(9748,		BK248,		0xACAEAE, 0x7B7C7C, 0xFFFFFF).setAutogen(NUGGET, BILLET, DUST, INGOT).m();
+	public static final NTMMaterial MAT_BK249		= makeSmeltable(9749,		BK249,		0xACAEAE, 0x7B7C7C, 0xFFFFFF).setAutogen(NUGGET, BILLET, DUST, INGOT).m();
 	public static final NTMMaterial MAT_CF249		= makeSmeltable(9849,		CF249,		0xFFC5A2, 0xFF9D60, 0xFFDBC9).setAutogen(NUGGET, BILLET, INGOT).m();
 	public static final NTMMaterial MAT_CF250		= makeSmeltable(9850,		CF250,		0xFFC5A2, 0xFF9D60, 0xFFDBC9).setAutogen(NUGGET, BILLET, INGOT).m();
 	public static final NTMMaterial MAT_CF251		= makeSmeltable(9851,		CF251,		0xFFC5A2, 0xFF9D60, 0xFFDBC9).setAutogen(NUGGET, BILLET, INGOT).m();
