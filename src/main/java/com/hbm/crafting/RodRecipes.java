@@ -81,6 +81,7 @@ public class RodRecipes {
 		addBreedingRod(PU241, ModItems.billet_pu241, BreedingRodType.PU241);
 		addBreedingRod(AM241, ModItems.billet_am241, BreedingRodType.AM241);
 		addBreedingRod(AM242, ModItems.billet_am242, BreedingRodType.AM242);
+		addBreedingRod(AM243, ModItems.billet_am243, BreedingRodType.AM243);
 		addBreedingRod(CM242, ModItems.billet_cm242, BreedingRodType.CM242);
 		addBreedingRod(CM243, ModItems.billet_cm243, BreedingRodType.CM243);
 		addBreedingRod(CM244, ModItems.billet_cm244, BreedingRodType.CM244);
