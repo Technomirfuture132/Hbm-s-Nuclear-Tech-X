@@ -289,7 +289,7 @@ public class OreDictManager {
 	/** CERIUM */
 	public static final DictFrame CE = new DictFrame("Cerium");
 	/*
-	 * NITAN
+	 * NITANhttps://github.com/Technomirfuture132/Hbm-s-Nuclear-Tech-X/blob/Special/src/main/java/com/hbm/inventory/OreDictManager.java
 	 */
 	/** IODINE */
 	public static final DictFrame I = new DictFrame("Iodine");
@@ -381,6 +381,8 @@ public class OreDictManager {
 		CM243	.rad(HazardRegistry.cm243)	.hot(2F)				.nugget(nugget_cm243)		.billet(billet_cm243)		.ingot(ingot_cm243);
 		CM244	.rad(HazardRegistry.cm244)	.hot(2F)				.nugget(nugget_cm244)		.billet(billet_cm244)		.ingot(ingot_cm244);
 		CM245	.rad(HazardRegistry.cm245)	.hot(1F)				.nugget(nugget_cm245)		.billet(billet_cm245)		.ingot(ingot_cm245);
+		CM246	.rad(HazardRegistry.cm246)	         				.nugget(nugget_cm246)		.billet(billet_cm246)		.ingot(ingot_cm246);
+		CM247	.rad(HazardRegistry.cm247) 				            .nugget(nugget_cm247)		.billet(billet_cm247)		.ingot(ingot_cm247); //<---active fissionable nuclear fuel
 		BK247	.rad(HazardRegistry.bk247)	.hot(1F)				.nugget(nugget_bk247)		.billet(billet_bk247)		.ingot(ingot_bk247)        .dust(powder_bk247)  .dustSmall(powder_bk247_tiny);
 		BK248	.rad(HazardRegistry.bk248)	.hot(2F)				.nugget(nugget_bk248)		.billet(billet_bk248)		.ingot(ingot_bk248)        .dust(powder_bk248)  .dustSmall(powder_bk248_tiny);
 		BK249	.rad(HazardRegistry.bk249)	.hot(5F)				.nugget(nugget_bk249)		.billet(billet_bk249)		.ingot(ingot_bk249)        .dust(powder_bk249)  .dustSmall(powder_bk249_tiny);
