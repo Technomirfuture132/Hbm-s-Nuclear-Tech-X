@@ -4,6 +4,12 @@
   * The same as standard control rods, except they need 5kHE/t
   * Have only a single cable connection at the bottom
   * Replace standard RBMK control rods when 528 mode is enabled
+* New RBMK fuels
+  * UZrH
+    * Made from MEU, zirconium and hydrogen in the PUREX
+    * More efficient than MEU but with less durability
+    * Has a new thermal coefficient mechanic, once the core heat exceeds 1000°C, reactivity drops down
+    * Very high diffusion, meaning the core is considerably colder than on most fuels
 
 ## Changed
 * Updated RBMK visuals
@@ -25,6 +31,21 @@
 * RBMK absorber columns now heat up when exposed to neutrons
   * The type of neutron does not matter, only the quantity
   * 20 flux equals 1°C heatup
+* RBMK passive cooling has changed
+  * The default value is now 2.5°C/t instead of 1
+  * This value only applies to rods that have exposed sides, i.e. the edges of a reactor
+  * There is now a second passive cooling variable used for rods on the inside (`dialPassiveCoolingInner`, 0.1°C/t by default)
+  * The effective passive cooling value is scaled smoothly depending on how many sides are exposed, using `dialPassiveCoolingInner` with no exposed sides and `dialPassiveCooling` for rods with four exposed sides
+  * Simply put, spindly RBMKs are now way less desirable, structural columns no longer just debuff the reactor and reactors that actually look like reactors are now more powerful
+* Chanced the way RBMK coolers work
+  * Instead of using cryogel, coolers use 50mB of cold PFM per tick and return an equal amount of warm PFM
+  * In a 5x5 square around the cooler, all components are cooled down by 200°C per tick, down to a minimum of 20°C
+  * This renders that section of the reactor unsuitable for boiling water, however it means very high heat fuels can be used
+  * Cold PFM is used up at a steady rate, even if the reactor is already cold
+* The RBMK structural column recipe now uses only half as many metal plates, and rubber instead of insulator
+* Changed the way reasim RBMK fuel channels work
+  * Instead of six randomized neutron streams, reasim rods now use eight half strength streams in an even star pattern
+  * The pattern is rotated in a random multiple of 9° (i.e. four possible angle variations)
 
 ## Fixed
 * Fixed NBTStack serialization omitting the stack size most of the time, preventing deserialization (mainly in the precision assembler config)
@@ -35,3 +56,5 @@
 * Fixed ammo container giving 9mm instead of .22 for the akimbo target pistols
 * Fixed RBMK control rods incorrectly showing up in the red group when no group is set
 * Fixed fluid output direction being incorrect on boilers, causing them to break with pipe anchors
+* Fixed an issue where the industrial turbine's tendency to round up the possible operation counter would cause it to use up steam it doesn't actually have
+* Fixed yet another issue with the settings tool when copying automatic control rod settings
